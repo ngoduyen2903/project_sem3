@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="280" pageHeight="400" columnWidth="260" leftMargin="10" rightMargin="10" topMargin="10" bottomMargin="10" uuid="f23f60d8-eb9c-46cb-987d-8131c93e1d83">
+	<property name="ireport.zoom" value="1.6105100000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     Bill."ID" AS Bill_ID,
+     Bill."ProductName" AS Bill_ProductName,
+     Bill."Quantity" AS Bill_Quantity,
+     Bill."IntoMoney" AS Bill_IntoMoney,
+     BillInformation."EmployeeName" AS Information_Name,
+     BillInformation."Date" AS Information_Date,
+     BillInformation."Time" AS Information_Time,
+     BillInformation."TotalMoney" AS Information_TotalMoney,
+     BillInformation."Money" AS Information_Money,
+     BillInformation."Surplus" AS Information_Surplus
+FROM
+     "dbo"."Bill" Bill,
+     "dbo"."BillInformation" BillInformation]]>
+	</queryString>
+	<field name="Bill_ID" class="java.lang.String"/>
+	<field name="Bill_ProductName" class="java.lang.String"/>
+	<field name="Bill_Quantity" class="java.lang.Integer"/>
+	<field name="Bill_IntoMoney" class="java.lang.String"/>
+	<field name="BillInformation_Name" class="java.lang.String"/>
+	<field name="BillInformation_Date" class="java.lang.String"/>
+	<field name="BillInformation_Time" class="java.lang.String"/>
+	<field name="BillInformation_TotalMoney" class="java.lang.String"/>
+	<field name="BillInformation_Money" class="java.lang.String"/>
+	<field name="BillInformation_Surplus" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="260" height="20" uuid="991e1679-4562-4997-afee-6b05eae9d5af"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DLT-MILK TEA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="260" height="20" uuid="c65a086e-0f93-4595-adff-cdd893c91d4e"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[đ. Mậu Thân, phường An Hòa, quận Ninh Kiều, Cần Thơ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="41" width="260" height="20" uuid="445c3f5c-126a-4ba3-834c-7d82039a8473"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[ĐT:0387090621.Email:dltmilktea@gmail.com]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="1" width="50" height="20" uuid="d22cfc94-9ea4-49af-9663-a519f3e5e99a"/>
+				<text><![CDATA[Ngày bán:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="50" y="1" width="107" height="20" uuid="82a4ce94-584c-414c-bf6b-24c30851f951"/>
+				<textFieldExpression><![CDATA[$F{BillInformation_Date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="21" width="50" height="20" uuid="4e1050f1-0edd-4a99-98be-85b9a2d13663"/>
+				<text><![CDATA[Giờ bán:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="50" y="21" width="107" height="20" uuid="191a6c05-8a9e-47ed-8d1b-c2f296b8040c"/>
+				<textFieldExpression><![CDATA[$F{BillInformation_Time}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="157" y="1" width="103" height="20" uuid="a1a23e27-2ba3-4622-9ca4-caefbca80bea"/>
+				<text><![CDATA[Nhân viên bán:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="157" y="21" width="103" height="20" uuid="b016e122-c5f7-402d-b12d-3fd4c676e420"/>
+				<textFieldExpression><![CDATA[$F{BillInformation_Name}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="41" width="260" height="1" uuid="ff6d9379-db42-425b-a2be-493861588e27"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="260" height="1" uuid="2a9b0e71-0089-483c-ba5d-e721c4169749"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="40" height="20" uuid="16c9287f-1b91-4f89-96b8-3454f7437041"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mã SP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="0" width="104" height="20" uuid="16ed2e5f-44d1-410a-bb6d-2aa4d52cc700"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sản phẩm]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="144" y="0" width="28" height="20" uuid="1dbd25f5-5a6d-40a3-8dfa-dca1729fba07"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="172" y="0" width="88" height="20" uuid="c4fcccb4-c2a7-43af-ae35-389c47dab4d0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tiền]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="40" height="20" uuid="78378633-26cf-4f9f-a03f-7fa3283f262f"/>
+				<textFieldExpression><![CDATA[$F{Bill_ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="40" y="0" width="104" height="20" uuid="f0b4dee7-a918-4bbc-b151-2d5db1b9d57a"/>
+				<textFieldExpression><![CDATA[$F{Bill_ProductName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="144" y="0" width="28" height="20" uuid="50f21a9d-bea7-49e9-b534-1e1cc8528470"/>
+				<textFieldExpression><![CDATA[$F{Bill_Quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="172" y="0" width="88" height="20" uuid="16629cee-234e-4904-a59c-7f00559a845b"/>
+				<textFieldExpression><![CDATA[$F{Bill_IntoMoney}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="144" y="0" width="76" height="20" uuid="b13f1154-e958-452e-aeb3-05e78ba14286"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Trang "+$V{PAGE_NUMBER}+" /"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="220" y="0" width="40" height="20" uuid="47ec8b53-02be-4bfe-9e9a-01ef6580d4f1"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="144" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="260" height="10" uuid="98554cf2-105f-4849-9833-3c1c13dbc3ae"/>
+				<box>
+					<pen lineWidth="0.0" lineStyle="Double"/>
+					<topPen lineWidth="2.0" lineStyle="Dashed"/>
+					<leftPen lineWidth="0.0" lineStyle="Double"/>
+					<bottomPen lineWidth="0.0" lineStyle="Double"/>
+					<rightPen lineWidth="0.0" lineStyle="Double"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="10" width="172" height="20" uuid="706793a9-58da-4709-bdd8-ed6958a5795e"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tổng tiền:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="172" y="10" width="88" height="20" uuid="4d76e40f-645f-4cbc-92ff-706f583f60d3"/>
+				<textFieldExpression><![CDATA[$F{BillInformation_TotalMoney}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="30" width="260" height="12" uuid="8af5140a-18d5-43a9-a23c-7ea9070a9b60"/>
+				<box>
+					<topPen lineWidth="2.0" lineStyle="Dotted"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="42" width="260" height="20" uuid="51a47bf8-fdbb-47d6-83ef-9a08c5328684"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Thanh toán:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="62" width="100" height="20" uuid="3fe9ce56-b7a4-443a-8d3d-e71ac842c9e1"/>
+				<text><![CDATA[Tiền nhận của khách:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="172" y="62" width="88" height="20" uuid="2dea4a14-4a5b-4d92-a79b-d0679e20967f"/>
+				<textFieldExpression><![CDATA[$F{BillInformation_Money}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="82" width="133" height="20" uuid="607903c8-4309-49b2-9d85-2b4834f183bd"/>
+				<text><![CDATA[Tiền dư trả lại khách:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="172" y="82" width="88" height="20" uuid="c5700d72-4528-4037-845d-776637bab494"/>
+				<textFieldExpression><![CDATA[$F{BillInformation_Surplus}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="104" width="260" height="20" uuid="a947f710-30e9-4863-a396-5ee2ec091a24"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Cảm ơn quý khách hàng!]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="124" width="260" height="20" uuid="4ca312c1-6640-4f33-9794-98e898b0657a"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Hẹn gặp lại!]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
